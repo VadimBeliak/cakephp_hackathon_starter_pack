@@ -18,40 +18,41 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <!DOCTYPE html>
 <html>
 <head>
-    <?= $this->Html->charset() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
-    </title>
-    <?= $this->Html->meta('icon') ?>
+	<?= $this->Html->charset() ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		<?= $cakeDescription ?>:
+		<?= $this->fetch('title') ?>
+	</title>
+	<?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('style.css') ?>
+	<?= $this->Html->css('bootstrap.min.css') ?>
+	<?= $this->Html->css('custom.css') ?>
+	<?= $this->Html->script('bootstrap.min.js') ?>
 
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
+
+	<?= $this->fetch('meta') ?>
+	<?= $this->fetch('css') ?>
+	<?= $this->fetch('script') ?>
 </head>
 <body>
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
-            </li>
-        </ul>
-        <div class="top-bar-section">
-            <ul class="right">
-                <li><a target="_blank" href="https://book.cakephp.org/3.0/">Documentation</a></li>
-                <li><a target="_blank" href="https://api.cakephp.org/3.0/">API</a></li>
-            </ul>
-        </div>
-    </nav>
-    <?= $this->Flash->render() ?>
-    <div class="container clearfix">
-        <?= $this->fetch('content') ?>
-    </div>
-    <footer>
-    </footer>
+	<!-- Navbar -->
+	<nav class="navbar">
+		<a class="navbar-brand" href="#">Welcome</a>
+		<?php if ($authUser): ?>
+			<a class="btn pull-right" href="/cakephp_hackathon_starter_pack/users/logout">
+				Log Out
+			</a>
+		<?php endif; ?>
+	</nav>
+
+	<?= $this->Flash->render() ?>
+
+	<!-- Main Content -->
+	<div class="container-fluid" id="mainContent">
+		<?= $this->fetch('content') ?>
+	</div>
+
 </body>
 </html>
