@@ -1,81 +1,72 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
-:root {
-	font-size: 62.5%;
-}
-
-body {
-	font-family: 'Source Sans Pro', sans-serif !important;
-	font-size: 1.9rem;
+html, body, body > div {
+	height: calc(100vh - 20px);
 }
 
 body {
 	/*background-color: #2b2b2b;*/
-	background-color: #FDFFFC!important;
+	/* background-color: #191919!important; */
+	background-color: #f3f3f3;
 }
 
 #mainContent {
-
+	padding: 0 0px 0 0;
 }
 
+.row {
+	margin-right: 0;
+	padding-left: 30px;
+}
+.hidden {
+	display: none;
+	height: 0;
+}
 
 /* Nav */
-.navbar-brand {
-	padding: 1.6rem 2.4rem;
-	margin-right: 0;
-	/*color: #FDFFFC!important;*/
-	color: #2b2b2b;
-	font-size: 4rem;
+.nav-side {
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+	margin-top: 10px;
+	background-color: #333333;
+	height: calc(100vh - 20px);
+	padding: 15px 20px;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+.nav-side > a {
+	color: white;
+}
+.nav-side > .material-icons {
+	color: white;
 }
 
-/*
- * Login CSS
- */
-.loginModule {
-	margin-top: 5rem;
-	padding: 2rem;
-	color: #2b2b2b;
+/* Alert */
+.alert {
+	margin: 10px 0 0 0;
+	border: 0;
+	border-radius: 0;
+	padding: 20px 45px;
+	line-height: 20px;
+}
+.alert:hover {
+	cursor: pointer;
 }
 
-hr {
-	border-top: 0.1rem solid #2b2b2b;;
-	margin-bottom: 1rem;
+/* Margin Adding Classes */
+.margin-top {
+	margin-top: 20px;
+}
+.margin-bottom {
+	margin-bottom: 20px;
 }
 
-/* Forms */
+/* Form */
 label {
-	margin-right: 10px;
+	margin: 0;
 }
 .form-control {
-	font-size: 1.6rem;
+	padding-top: 0px;
 }
-
-/* Button */
-.btn {
-	font-size: 1.6rem;
-
-}
-
-
-
-.margin-top-md {
-	margin-top: 1rem;
-}
-
-/* Colors */
-.bg-color1 {
-	background-color: #011627!important;
-}
-.bg-color2 {
-	/*background-color: #FF0022!important;*/
-	background-color: rgba(255, 0, 34, 0.8)!important;
-}
-.bg-color3 {
-	background-color: #41EAD4!important;
-}
-.bg-color4 {
-	background-color: #FDFFFC!important;
-}
-.bg-color5 {
-	background-color: #2E86C1!important;
+div.input {
+	margin-bottom: 10px;
 }

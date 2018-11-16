@@ -26,33 +26,42 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 	</title>
 	<?= $this->Html->meta('icon') ?>
 
+	<?= $this->fetch('meta') ?>
+	<?= $this->fetch('css') ?>
+	<?= $this->fetch('script') ?>
+
 	<?= $this->Html->css('bootstrap.min.css') ?>
-	<?= $this->Html->css('custom.css') ?>
+
 	<?= $this->Html->script('bootstrap.min.js') ?>
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
 
-	<?= $this->fetch('meta') ?>
-	<?= $this->fetch('css') ?>
-	<?= $this->fetch('script') ?>
+	<?= $this->Html->css('material-kit.min'); ?>
+	<?= $this->Html->css('custom.css') ?>
 </head>
 <body>
-	<!-- Navbar -->
-	<nav class="navbar">
-		<a class="navbar-brand" href="#">Welcome</a>
-		<?php if ($authUser): ?>
-			<a class="btn pull-right" href="/cakephp_hackathon_starter_pack/users/logout">
-				Log Out
-			</a>
-		<?php endif; ?>
-	</nav>
-
-	<?= $this->Flash->render() ?>
-
-	<!-- Main Content -->
-	<div class="container-fluid" id="mainContent">
-		<?= $this->fetch('content') ?>
+	<div class="container-fluid">
+		<div class="row" style="padding-left: 0;">
+			<div class="col-2 nav-side">
+				<a class="navbar-brand" href="#">Welcome</a>
+				<i class="material-icons">face</i>
+				<?php if ($authUser): ?>
+					<a class="btn pull-right" href="/cakephp_hackathon_starter_pack/users/logout">
+						Log Out
+					</a>
+				<?php endif; ?>
+			</div>
+			<div class="col-10" id="mainContent">
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md">
+						<?= $this->Flash->render(); ?>
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+				<?= $this->fetch('content');?>
+			</div>
+		</div>
 	</div>
-
 </body>
 </html>
